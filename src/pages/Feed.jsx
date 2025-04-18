@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Card, CardContent, Typography, Grid, CircularProgress, Box, Alert } from '@mui/material';
 import { api } from '../services/api';
+import axios from 'axios';
 
 function Feed() {
   const [posts, setPosts] = useState([]);
@@ -20,7 +21,7 @@ function Feed() {
         return;
       }
       
-      // Sort posts by ID (assuming newer posts have higher IDs)
+      
       const sortedPosts = allPosts.sort((a, b) => b.id - a.id);
       setPosts(sortedPosts);
     } catch (error) {
